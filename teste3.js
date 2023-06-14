@@ -1,12 +1,16 @@
-let data = require("./fakeData");
+const fs = require('fs');
+let {getFakeData, setFateData} = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
-const originalLength = data.length;
 
-module.exports = function (req, res) {
+module.exports = function (req, res, _next) {
   const { name } = req.query;
+  
+  const originalLength = getFakeData().length;
 
-  data = data.filter((user) => user.name !== name);
+  const newData = getFakeData().filter((user) => user.name !== name);
 
-  if (originalLength === data.length) return res.status(HttpStatus.NOT_FOUND.code).send("Not Found");
+  setFateData(newData);
+
+  if (originalLength === getFakeData().length) return res.status(HttpStatus.NOT_FOUND.code).send("Not Found");
   return res.status(HttpStatus.OK.code).send();
 };
