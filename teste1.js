@@ -1,20 +1,22 @@
-const data = require("./fakeData");
+const { getFakeData, findUserByName } = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
-const getUser = (req, res, next) => {
-  const { name } = req.query;
-  const user = data.find((item) => {
-    addOneCountToEveryItem();
-    return item.name === name;
+function addOneCountToEveryUser(user) {
+  if(!user) return;
+  if (!user.count) {
+    user.count = 1;
+  } else {
+    user.count += 1;
+  }
+}
 
-    function addOneCountToEveryItem() {
-      if (!item.count) {
-        item.count = 1;
-      } else {
-        item.count += 1;
-      }
-    }
-  });
+const getUser = (req, res, _next) => {
+  const { name } = req.query;
+
+  const user = findUserByName(name);
+
+  addOneCountToEveryUser(user);
+
   if (user) {
     return res.status(HttpStatus.OK.code).send(user);
   } else {
@@ -22,8 +24,8 @@ const getUser = (req, res, next) => {
   }
 };
 
-const getUsers = (req, res, next) => {
-  const users = data || [];
+const getUsers = (_req, res, _next) => {
+  const users = getFakeData();
   return res.send(users);
 };
 
