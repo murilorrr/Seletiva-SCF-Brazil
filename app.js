@@ -2,14 +2,13 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 const { authenticateUser } = require("./authMiddleware");
-const jwt = require('jsonwebtoken');
 
 var teste1 = require("./teste1");
 var teste2 = require("./teste2");
 var teste3 = require("./teste3");
 var teste4 = require("./teste4");
 var teste5 = require("./teste5");
-const { HttpStatus } = require("./httpStatus");
+var teste6 = require("./teste6");
 
 app.set("view engine", "jade");
 
@@ -30,19 +29,7 @@ app.get("/", function (req, res) {
   `);
 });
 
-app.post("/auth", (req, res, next) => {
-  const { name, job } = req.body;
-  const token = jwt.sign({ name, job }, 'chave-secreta', { expiresIn: '1h' });
-
-  res.json({ token });
-
-  if (job === "Desenvolvedor") {
-    next();
-  } else {
-    return res.status(HttpStatus.UNAUTHORIZED.code).send("Permission denied");
-  }
-});
-
+app.post("/auth", teste6);
 app.get("/user", teste1.getUser);
 app.get("/users", teste1.getUsers);
 app.post("/users", teste2);
