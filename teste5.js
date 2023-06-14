@@ -7,6 +7,7 @@ module.exports = function (req, res) {
   if(!name) return res.status(HttpStatus.BAD_REQUEST.code).send("name is required");
 
   const user = data.find((user) => user.name === name);
+  const userCounter = user.count ? user.count : 0;
 
-  res.status(HttpStatus.OK.code).send("Usuário " + name + "  foi lido " + user.count || 0 + " vezes.");
+  res.status(HttpStatus.OK.code).send("Usuário " + name + "  foi lido " + userCounter + " vezes.");
 };
