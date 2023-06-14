@@ -14,8 +14,8 @@ app.set('view engine', 'jade');
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use(bodyParser.json());                        
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -30,9 +30,9 @@ app.get('/', function(req, res){
 
 app.get("/user", teste1.getUser);
 app.get("/users", teste1.getUsers);
-app.post("/users", teste2)
-app.delete("/users", teste3)
-app.put("/users", teste4)
+app.post("/users", teste2);
+app.delete("/users", teste3);
+app.put("/users", teste4.updateUser);
 app.get("/users/access", teste5);
 
 
