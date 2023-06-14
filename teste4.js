@@ -1,18 +1,23 @@
-const fs = require("fs");
 const data = require("./fakeData");
+const { HttpStatus } = require("./httpStatus");
 
-const updateUser = (req, res) => {
+const updateUser = (req, res, next) => {
   const { id } = req.query;
   const { name, job } = req.body;
 
-  const user = data.find((item) => item.id === id);
+  if (!name || !job) {
+    res.status(HttpStatus.BAD_REQUEST.code).send("Name and job are required");
+    return;
+  }
+
+  const user = data.find((item) => item.id == id);
   if (user) {
     user.name = name;
     user.job = job;
 
-    res.status(200).send(user);
+    return res.status(HttpStatus.OK.code).send(user);
   } else {
-    res.status(404).send("User not found");
+    return res.status(HttpStatus.NOT_FOUND.code).send("User not found");
   }
 };
 

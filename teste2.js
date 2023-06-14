@@ -1,23 +1,20 @@
-const data =  require("./fakeData");
+const data = require("./fakeData");
+const { HttpStatus } = require("./httpStatus");
 
-module.exports = function(req, res, next){
+module.exports = function (req, res, next) {
+  const { name, job } = req.body;
 
-    const { name, job } = req.body;
+  if (!name || !job) {
+    res.status(HttpStatus.BAD_REQUEST.code).send("Name and job are required");
+    return;
+  }
 
-    if (!name || !job) {
-        res.status(400).send("Name and job are required");
-        return;
-      }
+  const newUser = {
+    name,
+    job,
+  };
 
-    const newUser = {
-        name,
-        job,
-    }
-    try {
-        data.push(newUser)
+    data.push(newUser);
 
-        res.status(201).send(newUser);
-    } catch (error){
-        next(error);
-    }
+    res.status(HttpStatus.CREATED.code).send(newUser);
 };
