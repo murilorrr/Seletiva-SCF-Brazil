@@ -1,5 +1,5 @@
 const fs = require('fs');
-let {getFakeData, setFateData} = require("./fakeData");
+let {getFakeData, setFakeData} = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
 module.exports = function (req, res, _next) {
@@ -9,7 +9,7 @@ module.exports = function (req, res, _next) {
 
   const newData = getFakeData().filter((user) => user.name !== name);
 
-  setFateData(newData);
+  setFakeData(newData);
 
   if (originalLength === getFakeData().length) return res.status(HttpStatus.NOT_FOUND.code).send("Not Found");
   return res.status(HttpStatus.OK.code).send();
