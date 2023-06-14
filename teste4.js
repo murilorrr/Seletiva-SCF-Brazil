@@ -1,4 +1,4 @@
-const data = require("./fakeData");
+const { getFakeData, updateFakeUser } = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
 const updateUser = (req, res, next) => {
@@ -10,12 +10,11 @@ const updateUser = (req, res, next) => {
     return;
   }
 
-  const user = data.find((item) => item.id == id);
-  if (user) {
-    user.name = name;
-    user.job = job;
+  const user = getFakeData().find((item) => item.id == id);
+  if (user) { 
+    const returnedUser = updateFakeUser(user.id, { name, job });
 
-    return res.status(HttpStatus.OK.code).send(user);
+    return res.status(HttpStatus.OK.code).send(returnedUser);
   } else {
     return res.status(HttpStatus.NOT_FOUND.code).send("User not found");
   }

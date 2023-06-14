@@ -12,12 +12,14 @@ const findUserByName = (name) => {
   return fakeData.find((user) => user.name === name);
 };
 
-const updateUser = (name, updatedUserData) => {
-  const user = fakeData.find((user) => user.name === name);
-  if (user) {
-    fakeData[user.id] = { ...fakeData[user.id], ...updatedUserData };
-    return fakeData[user.id];
-  }
+const updateFakeUser = (id, updatedUserData) => {
+  fakeData.find((user, index) => {
+    if (user) {
+        user = { ...user, ...updatedUserData };
+        fakeData[index] = user;
+        return user;
+      }
+  });
   return undefined;
 };
 
@@ -33,7 +35,7 @@ const setFakeData = (arrayOfData) => {
 module.exports = {
   getFakeData,
   findUserByName,
-  updateUser,
+  updateFakeUser,
   deleteUser,
   setFakeData,
 };
