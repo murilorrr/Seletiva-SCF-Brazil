@@ -1,15 +1,12 @@
-var data =  require("./fakeData");
+let data = require("./fakeData");
+const originalLength = data.length;
 
 module.exports = function(req, res) {
   
-    var name =  req.query.name;
+    const { name } =  req.query;
 
-    for(let i = 0; i < data.length;  i++) {
-        if(i.name == name) {
-            data[i] = null;
-        }
-    }
+    data = data.filter((user) => user.name !== name)
 
-    res.send("success");
-
+    if(originalLength === data.length) return res.status(404).send("Not Found");
+    return res.status(200).send();
 };
