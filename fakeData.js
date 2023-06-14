@@ -25,7 +25,8 @@ const deleteUser = (userId) => {
   fakeData = fakeData.filter((user) => user.id !== userId);
 };
 
-const setFateData = (arrayOfData) => {
+const setFakeData = (arrayOfData) => {
+    console.log(Array.isArray(arrayOfData));
   if (Array.isArray(arrayOfData)) fakeData = arrayOfData;
 };
 
@@ -34,5 +35,5 @@ module.exports = {
   findUserByName,
   updateUser,
   deleteUser,
-  setFateData,
+  setFakeData,
 };
