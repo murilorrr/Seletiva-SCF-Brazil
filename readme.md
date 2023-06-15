@@ -43,11 +43,11 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | GET    | /                  | Returns all endpoints available in the API                       |                   |                |
 | GET    | /auth              | Returns a JWT token for authentication on PUT and DELETE requests | Request Body     | name, job      |
 | GET    | /users             | Returns all users in the database                                |                   |                |
-| GET    | /user              | Returns a user from the database based on the provided name      | String            | name           |
+| GET    | /user              | Returns a user from the database based on the provided name      | String Param      | name           |
 | POST   | /users             | Creates a new user                                               | Request Body      | name, job      |
-| DELETE | /users             | Deletes a user based on the provided name                        | String            | name           |
+| DELETE | /users             | Deletes a user based on the provided name                        | String Param      | name           |
 | PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
-| GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
+| GET    | /users/access      | Returns the number of times a specific user has been accessed    | String Param      | name           |
 
 ## To Run 
 #### Prerequisites: Node.js with npm installed on your machine.
