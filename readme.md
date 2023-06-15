@@ -6,14 +6,6 @@
 [Contributing](#contributing) •
 [About Me](https://github.com/murilorrr)
 
-#### Prerequisites: Node.js with npm installed on your machine.
-
-```sh
-$ cd Seletiva-SCF-Brazil
-$ npm install
-$ node 
-```
-
 ## Introduction
 
 This project contains a fake database in `fakeData.js` with only one record. The purpose of this challenge is to improve the CRUD operations written in the following 4 test files.
@@ -56,6 +48,15 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | DELETE | /users             | Deletes a user based on the provided name                        | String            | name           |
 | PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
 | GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
+
+## To Run 
+#### Prerequisites: Node.js with npm installed on your machine.
+
+```sh
+$ cd Seletiva-SCF-Brazil
+$ npm install
+$ node 
+```
 
 ## 👣 Next steps
 - [ ]  Change query parameter from "name" to "id" in the GET and DELETE endpoints
