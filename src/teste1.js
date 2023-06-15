@@ -3,11 +3,8 @@ const { HttpStatus } = require("./httpStatus");
 
 function addOneCountToEveryUser(user) {
   if(!user) return;
-  if (!user.count) {
-    user.count = 1;
-  } else {
-    user.count += 1;
-  }
+  if (!user.count) return user.count = 1;
+  return user.count += 1;
 }
 
 const getUser = (req, res, _next) => {

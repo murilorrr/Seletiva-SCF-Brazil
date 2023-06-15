@@ -1,4 +1,3 @@
-const fs = require('fs');
 let {getFakeData, setFakeData} = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
