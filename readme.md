@@ -1,42 +1,77 @@
-# Este é um teste para desenvolvedores
+# Desafio Tecnico SCF
+## A Refactoring test
 
-# possui 5 testes
+<p align="center">
+  <a href="#-introduction">Introduction</a> •
+  <a href="#-api">API DOCS</a> •
+  <a href="#-contributing">Contributing</a> •
+  <a href="https://github.com/murilorrr">About Me</a> •
+</p>
 
-## Introdução
+### Default method
 
-Este projeto possui um banco de dados fake em fakeData.js com apenas um registro.
-A ideia é melhorar e o CRUD escrito nos 4 arquivos de teste abaixo.
+#### You Need Node with npm install in your machine:
 
-Será a validada a forma de escrita de código.
-Escreva códigos que humanos consigam entender.
+```sh
+$ cd Seletiva-SCF-Brazil
+$ npm install
+$ node 
+```
 
-Fique a vontade para fazer modificaçoes nos serviços, comentários em código, estrutura, mas seja objetivo.
+## **Introduction**
 
-## teste1.js
+This project has a fake database in fakeData.js with only one record.
+The idea is to improve the CRUD written in the 4 test files below.
 
-GET em /user 
+The code writing style will be validated.
+Write code that humans can understand.
 
-Possuimos neste arquivo um serviço que faz uma busca no banco fake e retorna um registro.
-Este código funciona, mas é possivel melhorar.
-Veja o que pode deixar ele melhor escrito e mais performatico.
+Feel free to make modifications to the services, code comments, structure, but be concise.
 
-## teste2.js
+teste1.js
+GET on /user
 
-POST em /users, descubra a intenção dele e o corrija.
+In this file, we have a service that searches the fake database and returns a record.
+This code works, but it can be improved.
+See what can be done to make it better written and more performant.
 
-## teste3.js
+teste2.js
+POST on /users, discover its intention and correct it.
 
-Este procura um usuário e o deleta da base.
-Retorne sucesso para o client caso realmente tenha sido excluido e deixe o código mais performatico.
+teste3.js
+This file searches for a user and deletes it from the database.
+Return success to the client if it has actually been deleted and make the code more performant.
 
-## teste4.js
+teste4.js
+Update the data of a specific user.
 
-Atualiza os dados de um usuário especifico.
+teste5.js
+Return how many times a particular user has been read in teste1.
 
-## teste5.js
+teste 6
+Define a way to create permission for the user, determine if the user can delete or update users. Create a middleware to validate these permissions and add it to teste4 and teste3.
 
-Retorne quantas vezes determinado usuário foi lido no teste1.
+## 🤝 **API**
 
-## teste 6
+| Method | Route | Description | Type of Param | Params |
+|-------| ------ | ---- | ------ | ---- | 
+|GET| /       |  Retorn all of endpoints from API    |  |  |
+|GET| /auth |  Retorn a token jwt to use for put and delete endpoints authentication |  |  |
+|GET| /users      |  Retorn all of users    |  |  |
+|GET| /user       |  Retorn a user in database from name  | Param String |  name  |
+|POST| /users       |   create new user   |   Body    |   name, job   |
+|DELETE| /users       |   delete a user from name   |   Param String   |   name   |
+|PUT| /users/:id       |   update a user from id   |   Param String, Body   |   id, name, job |
+|GET| /users/access       |  Retorn a count with many times a user has requested |  |  |
 
-Defina uma forma de criar permissão para o usuario, defina se o usuário pode deletar ou atualizar usuários. Crie um middleware para validar essas permissões e adicione no teste4 e teste3.
+
+## 🤝 **Contributing**
+
+This project is for study purposes too, so send me an email telling me what you are doing and why you are doing it, teach me what you know
+
+All kinds of contributions are very welcome and appreciated!
+
+- ⭐️ Star the project
+- 🐛 Find and report
+- 📥 Submit PRs to help solve issues or add features
+- ✋ Influence the future with feature requests
