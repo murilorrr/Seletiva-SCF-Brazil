@@ -41,7 +41,7 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | Method | Route              | Description                                                      | Type of Parameter | Parameters     |
 | ------ | ------------------ | ---------------------------------------------------------------- | ----------------- | -------------- |
 | GET    | /                  | Returns all endpoints available in the API                       |                   |                |
-| GET    | /auth              | Returns a JWT token for authentication on PUT and DELETE requests |                   |                |
+| GET    | /auth              | Returns a JWT token for authentication on PUT and DELETE requests | Request Body     | name, job      |
 | GET    | /users             | Returns all users in the database                                |                   |                |
 | GET    | /user              | Returns a user from the database based on the provided name      | String            | name           |
 | POST   | /users             | Creates a new user                                               | Request Body      | name, job      |
