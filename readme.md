@@ -1,42 +1,78 @@
-# Este é um teste para desenvolvedores
+# SCF Technical Challenge
+## A Refactoring Test
 
-# possui 5 testes
+[Introduction](#introduction) •
+[API Documentation](#api-documentation) •
+[Contributing](#contributing) •
+[About Me](https://github.com/murilorrr)
 
-## Introdução
+## Introduction
 
-Este projeto possui um banco de dados fake em fakeData.js com apenas um registro.
-A ideia é melhorar e o CRUD escrito nos 4 arquivos de teste abaixo.
+This project contains a fake database in `fakeData.js` with only one record. The purpose of this challenge is to improve the CRUD operations written in the following 4 test files.
 
-Será a validada a forma de escrita de código.
-Escreva códigos que humanos consigam entender.
+The code's readability and performance will be evaluated, so it is important to write code that is easily understandable by humans.
 
-Fique a vontade para fazer modificaçoes nos serviços, comentários em código, estrutura, mas seja objetivo.
+#### Teste1.js - GET on `/user`
 
-## teste1.js
+In this file, there is a service that queries the fake database and returns a single record. While the code works, there is room for improvement. Analyze and implement modifications to make it better written and more performant.
 
-GET em /user 
+#### Teste2.js - POST on `/users`
 
-Possuimos neste arquivo um serviço que faz uma busca no banco fake e retorna um registro.
-Este código funciona, mas é possivel melhorar.
-Veja o que pode deixar ele melhor escrito e mais performatico.
+This file represents a POST request to the `/users` endpoint. Analyze the code, understand its intention, and correct any issues that you identify.
 
-## teste2.js
+#### Teste3.js - DELETE on `/users`
 
-POST em /users, descubra a intenção dele e o corrija.
+This file searches for a user in the database and deletes it if found. Return a success response to the client if the deletion is successful and optimize the code for better performance.
 
-## teste3.js
+#### Teste4.js - PUT on `/users/:id`
 
-Este procura um usuário e o deleta da base.
-Retorne sucesso para o client caso realmente tenha sido excluido e deixe o código mais performatico.
+This file updates the data of a specific user identified by the provided ID. Review the code and make any necessary improvements.
 
-## teste4.js
+#### Teste5.js - GET on `/users/access`
 
-Atualiza os dados de um usuário especifico.
+Implement a functionality that returns the number of times a specific user has been accessed in `Teste1.js`.
 
-## teste5.js
+#### Teste 6 - User Permissions
 
-Retorne quantas vezes determinado usuário foi lido no teste1.
+Define a way to grant permissions to users, allowing or restricting their ability to delete or update other users. Create a middleware function to validate these permissions and apply it to `Teste4.js` and `Teste3.js`.
 
-## teste 6
+## API Documentation
 
-Defina uma forma de criar permissão para o usuario, defina se o usuário pode deletar ou atualizar usuários. Crie um middleware para validar essas permissões e adicione no teste4 e teste3.
+| Method | Route              | Description                                                      | Type of Parameter | Parameters     |
+| ------ | ------------------ | ---------------------------------------------------------------- | ----------------- | -------------- |
+| GET    | /                  | Returns all endpoints available in the API                       |                   |                |
+| GET    | /auth              | Returns a JWT token for authentication on PUT and DELETE requests |                   |                |
+| GET    | /users             | Returns all users in the database                                |                   |                |
+| GET    | /user              | Returns a user from the database based on the provided name      | String            | name           |
+| POST   | /users             | Creates a new user                                               | Request Body      | name, job      |
+| DELETE | /users             | Deletes a user based on the provided name                        | String            | name           |
+| PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
+| GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
+
+## To Run 
+#### Prerequisites: Node.js with npm installed on your machine.
+
+```sh
+$ cd Seletiva-SCF-Brazil
+$ npm install
+$ node 
+```
+
+## 👣 Next steps
+- [ ]  Change query parameter from "name" to "id" in the GET and DELETE endpoints
+- [X]  API documentation
+- [ ]  Create CI & CD for this repo
+- [X]  Improve JSON validation
+- [ ]  Test for at least 90% coverage of the application
+
+
+## Contributing
+
+This project is also intended for educational purposes. If you are interested in contributing, please send me an email explaining your plans and reasons for contributing. I would love to learn from your insights and knowledge.
+
+All types of contributions are highly appreciated:
+
+- ⭐️ Star the project
+- 🐛 Find and report issues
+- 📥 Submit pull requests to help resolve issues or add features
+- ✋ Influence the future by suggesting new features
