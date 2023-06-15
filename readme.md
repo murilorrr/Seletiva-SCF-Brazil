@@ -1,16 +1,14 @@
-# Desafio Tecnico SCF
-## A Refactoring test
+# SCF Technical Challenge
+## A Refactoring Test
 
-<p align="center">
-  <a href="#-introduction">Introduction</a> •
-  <a href="#-api">API DOCS</a> •
-  <a href="#-contributing">Contributing</a> •
-  <a href="https://github.com/murilorrr">About Me</a> •
-</p>
+[Introduction](#introduction) •
+[API Documentation](#api-documentation) •
+[Contributing](#contributing) •
+[About Me](https://github.com/murilorrr)
 
-### Default method
+### Default Method
 
-#### You Need Node with npm install in your machine:
+#### Prerequisites: Node.js with npm installed on your machine.
 
 ```sh
 $ cd Seletiva-SCF-Brazil
@@ -18,60 +16,56 @@ $ npm install
 $ node 
 ```
 
-## **Introduction**
+## Introduction
 
-This project has a fake database in fakeData.js with only one record.
-The idea is to improve the CRUD written in the 4 test files below.
+This project contains a fake database in `fakeData.js` with only one record. The purpose of this challenge is to improve the CRUD operations written in the following 4 test files.
 
-The code writing style will be validated.
-Write code that humans can understand.
+The code's readability and performance will be evaluated, so it is important to write code that is easily understandable by humans.
 
-Feel free to make modifications to the services, code comments, structure, but be concise.
+#### Teste1.js - GET on `/user`
 
-teste1.js
-GET on /user
+In this file, there is a service that queries the fake database and returns a single record. While the code works, there is room for improvement. Analyze and implement modifications to make it better written and more performant.
 
-In this file, we have a service that searches the fake database and returns a record.
-This code works, but it can be improved.
-See what can be done to make it better written and more performant.
+#### Teste2.js - POST on `/users`
 
-teste2.js
-POST on /users, discover its intention and correct it.
+This file represents a POST request to the `/users` endpoint. Analyze the code, understand its intention, and correct any issues that you identify.
 
-teste3.js
-This file searches for a user and deletes it from the database.
-Return success to the client if it has actually been deleted and make the code more performant.
+#### Teste3.js - DELETE on `/users`
 
-teste4.js
-Update the data of a specific user.
+This file searches for a user in the database and deletes it if found. Return a success response to the client if the deletion is successful and optimize the code for better performance.
 
-teste5.js
-Return how many times a particular user has been read in teste1.
+#### Teste4.js - PUT on `/users/:id`
 
-teste 6
-Define a way to create permission for the user, determine if the user can delete or update users. Create a middleware to validate these permissions and add it to teste4 and teste3.
+This file updates the data of a specific user identified by the provided ID. Review the code and make any necessary improvements.
 
-## 🤝 **API**
+#### Teste5.js - GET on `/users/access`
 
-| Method | Route | Description | Type of Param | Params |
-|-------| ------ | ---- | ------ | ---- | 
-|GET| /       |  Retorn all of endpoints from API    |  |  |
-|GET| /auth |  Retorn a token jwt to use for put and delete endpoints authentication |  |  |
-|GET| /users      |  Retorn all of users    |  |  |
-|GET| /user       |  Retorn a user in database from name  | Param String |  name  |
-|POST| /users       |   create new user   |   Body    |   name, job   |
-|DELETE| /users       |   delete a user from name   |   Param String   |   name   |
-|PUT| /users/:id       |   update a user from id   |   Param String, Body   |   id, name, job |
-|GET| /users/access       |  Retorn a count with many times a user has requested |  |  |
+Implement a functionality that returns the number of times a specific user has been accessed in `Teste1.js`.
 
+#### Teste 6 - User Permissions
 
-## 🤝 **Contributing**
+Define a way to grant permissions to users, allowing or restricting their ability to delete or update other users. Create a middleware function to validate these permissions and apply it to `Teste4.js` and `Teste3.js`.
 
-This project is for study purposes too, so send me an email telling me what you are doing and why you are doing it, teach me what you know
+## API Documentation
 
-All kinds of contributions are very welcome and appreciated!
+| Method | Route              | Description                                                      | Type of Parameter | Parameters     |
+| ------ | ------------------ | ---------------------------------------------------------------- | ----------------- | -------------- |
+| GET    | /                  | Returns all endpoints available in the API                       |                   |                |
+| GET    | /auth              | Returns a JWT token for authentication on PUT and DELETE requests |                   |                |
+| GET    | /users             | Returns all users in the database                                |                   |                |
+| GET    | /user              | Returns a user from the database based on the provided name      | String            | name           |
+| POST   | /users             | Creates a new user                                               | Request Body      | name, job      |
+| DELETE | /users             | Deletes a user based on the provided name                        | String            | name           |
+| PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
+| GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
+
+## Contributing
+
+This project is also intended for educational purposes. If you are interested in contributing, please send me an email explaining your plans and reasons for contributing. I would love to learn from your insights and knowledge.
+
+All types of contributions are highly appreciated:
 
 - ⭐️ Star the project
-- 🐛 Find and report
-- 📥 Submit PRs to help solve issues or add features
-- ✋ Influence the future with feature requests
+- 🐛 Find and report issues
+- 📥 Submit pull requests to help resolve issues or add features
+- ✋ Influence the future by suggesting new features
