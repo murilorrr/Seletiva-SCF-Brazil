@@ -58,11 +58,11 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
 
 ## 👣 Next steps
-- []  Change query parameter from "name" to "id" in the GET and DELETE endpoints
+- [ ]  Change query parameter from "name" to "id" in the GET and DELETE endpoints
 - [X]  API documentation
-- []  Create CI & CD for this repo
+- [ ]  Create CI & CD for this repo
 - [X]  Improve JSON validation
-- []  Test for at least 90% coverage of the application
+- [ ]  Test for at least 90% coverage of the application
 
 
 ## Contributing
