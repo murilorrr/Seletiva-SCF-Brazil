@@ -9,5 +9,5 @@ module.exports = function (req, res) {
   const user = findUserByName(name);
   const userCounter = user?.count ? user.count : 0;
 
-  res.status(HttpStatus.OK.code).send("Usuário " + name + "  foi lido " + userCounter + " vezes.");
+  res.status(HttpStatus.OK.code).send("Usuário " + name + " foi lido " + userCounter + " vezes.");
 };

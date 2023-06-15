@@ -1,7 +1,9 @@
 let { getFakeData, setFakeData } = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
-module.exports = function (req, res, _next) {
+const highestIdFunction = (data) => data.length > 0 ? Math.max(...data.map((user) => user.id)) : 0;
+
+const createUserFunction = function (req, res, _next) {
   const { name, job } = req.body;
 
   if (!name || !job) {
@@ -11,8 +13,7 @@ module.exports = function (req, res, _next) {
 
   const data = getFakeData();
 
-  const highestId = data.length > 0 ? Math.max(...data.map((user) => user.id)) : 0;
-  const newUserId = highestId + 1;
+  const newUserId = highestIdFunction(data) + 1;
 
   const newUser = {
     id: newUserId,
@@ -25,3 +26,8 @@ module.exports = function (req, res, _next) {
            
   res.status(HttpStatus.CREATED.code).send(newUser);
 };
+
+module.exports = {
+  highestIdFunction,
+  createUserFunction
+}

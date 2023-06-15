@@ -5,7 +5,6 @@ const deleteHandler = require("../src/teste3");
 
 describe("Delete Handler", () => {
   beforeEach(() => {
-    // Configuração inicial dos dados falsos antes de cada teste
     setFakeData([
       { id: 1, name: "John Doe" },
       { id: 2, name: "Jane Smith" },
@@ -39,7 +38,7 @@ describe("Delete Handler", () => {
   test("should return status NOT_FOUND if user with given name is not found", () => {
     const req = {
       query: {
-        name: "Nonexistent User",
+        name: "null user",
       },
     };
     const sendMock = jest.fn();
