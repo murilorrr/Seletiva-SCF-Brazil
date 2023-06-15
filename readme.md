@@ -6,8 +6,6 @@
 [Contributing](#contributing) •
 [About Me](https://github.com/murilorrr)
 
-### Default Method
-
 #### Prerequisites: Node.js with npm installed on your machine.
 
 ```sh
