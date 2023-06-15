@@ -59,6 +59,14 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
 | GET    | /users/access      | Returns the number of times a specific user has been accessed     |                   |                |
 
+## 👣 Next steps
+- []  Change query parameter from "name" to "id" in the GET and DELETE endpoints
+- [X]  API documentation
+- []  Create CI & CD for this repo
+- [X]  Improve JSON validation
+- []  Test for at least 90% coverage of the application
+
+
 ## Contributing
 
 This project is also intended for educational purposes. If you are interested in contributing, please send me an email explaining your plans and reasons for contributing. I would love to learn from your insights and knowledge.
