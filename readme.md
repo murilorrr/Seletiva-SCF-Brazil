@@ -46,7 +46,7 @@ Define a way to grant permissions to users, allowing or restricting their abilit
 | GET    | /user              | Returns a user from the database based on the provided name      | String Param      | name           |
 | POST   | /users             | Creates a new user                                               | Request Body      | name, job      |
 | DELETE | /users             | Deletes a user based on the provided name                        | String Param      | name           |
-| PUT    | /users/:id         | Updates a user based on the provided ID                          | String, Request   | id, name, job  |
+| PUT    | /users             | Updates a user based on the provided ID                          | String Param, Request   | id, name, job  |
 | GET    | /users/access      | Returns the number of times a specific user has been accessed    | String Param      | name           |
 
 ## To Run 
