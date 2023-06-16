@@ -2,7 +2,6 @@ let {getFakeData, setFakeData} = require("./fakeData");
 const { HttpStatus } = require("./httpStatus");
 
 module.exports = function (req, res, _next) {
-  console.log(req);
   const { name } = req.query;
   
   const originalLength = getFakeData().length;
