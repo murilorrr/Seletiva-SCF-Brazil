@@ -63,7 +63,7 @@ $ node
 - [X]  API documentation
 - [ ]  Create CI & CD for this repo
 - [X]  Improve JSON validation
-- [ ]  Test for at least 90% coverage of the application
+- [X]  Test for at least 90% coverage of the application
 
 
 ## Contributing
